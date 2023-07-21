@@ -1,10 +1,15 @@
-const express = require("express");
-const app = express();
-const http = require("http");
-const cors = require("cors");
-const { Server } = require("socket.io");
-app.use(cors());
+import express from "express";
+import http from "http";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
+import cors from "cors";
+import { Server } from "socket.io";
+const app = express();
+app.use(cors());
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+app.use(express.static(path.join(__dirname, "public")));
 const server = http.createServer(app);
 server.listen(3001, () => {
   console.log("SERVER RUNNING");
