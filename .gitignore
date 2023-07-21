@@ -37,3 +37,4 @@ build/
 *.pyc
 _pycache_/
 .env
+yarn.lock
