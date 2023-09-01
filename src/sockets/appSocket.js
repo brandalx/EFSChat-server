@@ -1,8 +1,10 @@
-const iosocket = require("socket.io");
+import { Socket } from "socket.io";
 
 let io;
 
-exports.createSocket = (server) => {
+let iosocket = Socket;
+
+export const createSocket = (server) => {
   io = iosocket(server, {
     cors: {
       origin: "*",
