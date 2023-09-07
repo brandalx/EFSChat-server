@@ -15,4 +15,5 @@ routesInit(app);
 const server = http.createServer(app);
 server.listen(3001, () => {
   console.log("SERVER RUNNING");
+  createSocket(server);
 });
